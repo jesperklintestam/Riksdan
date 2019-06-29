@@ -154,6 +154,12 @@ h1 {
         text-decoration: line-through;
     }
 
+@media (hover: none) {
+    .fixed-buttons#Buttons button.inactive {
+        filter: brightness(1);
+    }
+}
+
 #CButton {
     background-color: #336036;
 }
