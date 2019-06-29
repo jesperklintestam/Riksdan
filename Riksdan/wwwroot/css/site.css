@@ -1,0 +1,118 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: #4b6672;
+        margin: 50px;
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+    margin: 25px;
+    }
+}
+
+a, .navbar-inverse .navbar-brand, button {
+    transition: color 100ms;
+}
+
+    a:hover, .navbar-inverse .btn-link:hover, .navbar-inverse .navbar-brand:hover, a:focus, .navbar-inverse .navbar-brand:focus, button:hover {
+        color: #3d8cae;
+        text-decoration: none;
+    }
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    cursor: default;
+}
+
+.flexbox-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flexbox-column {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3em;
+}
+
+.person-item {
+    align-items: center;
+    text-align: center;
+    width: 100px;
+    padding: 2px;
+    margin: 4px;
+    box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.flexbox-row img {
+    margin: 4px;
+}
+
+.party-div {
+    margin-top: 40px;
+}
+
+    .party-div .party-header img {
+        width: 80px;
+        height: 80px;
+    }
+
+@media only screen and (max-width: 768px) {
+    .party-div .party-header img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+.party-div h2 {
+    margin: 40px 0 10px 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    .party-div h2 {
+        margin: 20px 0 10px 0px;
+        font-size: 20px;
+    }
+}
+
+
+.fixed-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    width: 50px;
+    text-align: center;
+    line-height: 1;
+    font-weight: bold;
+}
+
+    .fixed-buttons span {
+        margin-bottom: 10px;
+    }
+
+    .fixed-buttons button {
+        margin: 5px;
+        border-radius: 5px;
+        border: none;
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+        background-color: #ecebeb;
+        width: 40px;
+        height: 30px;
+    }
+
+        .fixed-buttons button:hover {
+            box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.5);
+        }
+
+        .fixed-buttons button.inactive {
+            background-color: #bebebe;
+            text-decoration: line-through;
+        }
+
+            .fixed-buttons button.inactive:hover {
+            }
