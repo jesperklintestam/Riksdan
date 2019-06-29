@@ -1,19 +1,21 @@
 ﻿body {
-    padding-top: 50px;
+    padding-top: 30px;
     padding-bottom: 20px;
     font-family: 'Montserrat', sans-serif;
-    color: #4b6672;
-        margin: 50px;
+    color: #2c3235;
+    background-color: #f5f5f5;
+    margin: 50px;
 }
 
 @media only screen and (max-width: 768px) {
     body {
-    margin: 25px;
+        margin: 15px;
+        padding-top: 25px;
     }
 }
 
 a, .navbar-inverse .navbar-brand, button {
-    transition: color 100ms;
+    transition: filter 100ms;
 }
 
     a:hover, .navbar-inverse .btn-link:hover, .navbar-inverse .navbar-brand:hover, a:focus, .navbar-inverse .navbar-brand:focus, button:hover {
@@ -43,10 +45,12 @@ h1 {
 .person-item {
     align-items: center;
     text-align: center;
-    width: 100px;
+    width: 105px;
     padding: 2px;
     margin: 4px;
     box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    line-height: 1.2;
 }
 
 .flexbox-row img {
@@ -81,18 +85,52 @@ h1 {
 }
 
 
+#C {
+    color: #336036;
+}
+
+#KD {
+    color: #2d5495;
+}
+
+#L {
+    color: #325ea8;
+}
+
+#M {
+    color: #273a8f;
+}
+
+#MP {
+    color: #557d38;
+}
+
+#S {
+    color: #c6172c;
+}
+
+#SD {
+    color: #957501;
+}
+
+#V {
+    color: #b42419;
+}
+
 .fixed-buttons {
     position: fixed;
     bottom: 20px;
     right: 10px;
-    width: 50px;
+    width: 52px;
     text-align: center;
     line-height: 1;
     font-weight: bold;
 }
 
     .fixed-buttons span {
-        margin-bottom: 10px;
+        margin-bottom: 5px;
+        padding: 5px 0;
+        background-color: #f5f5f5;
     }
 
     .fixed-buttons button {
@@ -100,19 +138,50 @@ h1 {
         border-radius: 5px;
         border: none;
         box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
-        background-color: #ecebeb;
+        background-color: #949494;
         width: 40px;
         height: 30px;
+        color: #fff;
     }
 
         .fixed-buttons button:hover {
             box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.5);
+            filter: brightness(1.2);
         }
 
-        .fixed-buttons button.inactive {
-            background-color: #bebebe;
-            text-decoration: line-through;
-        }
+    .fixed-buttons#Buttons button.inactive {
+        background-color: #bebebe;
+        text-decoration: line-through;
+    }
 
-            .fixed-buttons button.inactive:hover {
-            }
+#CButton {
+    background-color: #336036;
+}
+
+#KDButton {
+    background-color: #2d5495;
+}
+
+#LButton {
+    background-color: #325ea8;
+}
+
+#MButton {
+    background-color: #273a8f;
+}
+
+#MPButton {
+    background-color: #557d38;
+}
+
+#SButton {
+    background-color: #c6172c;
+}
+
+#SDButton {
+    background-color: #d7aa0b;
+}
+
+#VButton {
+    background-color: #b42419;
+}

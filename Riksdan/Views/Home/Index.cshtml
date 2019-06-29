@@ -22,8 +22,8 @@
     @foreach (string party in PartyList)
     {
         var PartyPersonList = RiksdagsList.Where(x => x.Party == party);
-        <div class="party-div" id=@party>
-            @switch (party)
+    <div class="party-div" id=@party>
+        @switch (party)
             {
                 case "C":
                     FullPartyName = "Centerpartiet";
@@ -56,38 +56,40 @@
                     FullPartyName = "Övriga";
                     break;
             }
-            <div class="flexbox-row party-header">
-                <img src="@string.Format("/images/" + party + ".png")" alt="Partilogo" />
-                <h2>@FullPartyName</h2>
-            </div>
-            <div class="flexbox-row">
-                @foreach (var person in PartyPersonList)
-                {
-                    <div class="flexbox-column person-item">
-                        <img src="@person.ImageUrlSmall" alt="Porträttfoto" />
-                        @person.FirstName
-                        @person.LastName
-                    </div>
-                }
-            </div>
+        <div class="flexbox-row party-header">
+            <img src="@string.Format("/images/" + party + ".png")" alt="Partilogo" />
+            <h2>@FullPartyName</h2>
         </div>
+        <div class="flexbox-row">
+            @foreach (var person in PartyPersonList)
+                {
+            <div class="flexbox-column person-item">
+                <img src="@person.ImageUrlSmall" alt="Porträttfoto" />
+                @person.FirstName
+                @person.LastName
+            </div>
+                }
+        </div>
+    </div>
     }
 
-    <div class="fixed-buttons flexbox-column">
-        <span>Filtrera partier</span>
+    <div class="fixed-buttons flexbox-column" id="Buttons">
+        <span>
+            <small>Filtrera partier</small>
+        </span>
         @foreach (string party in PartyList)
         {
-            @if (party == "-")
+        @if (party == "-")
             {
-                <button type="button" onclick="toggleParty(this, '@party')" >
-                    PL
-                </button>
+        <button type="button" id="PLButton" onclick="toggleParty(this, '@party')">
+            PL
+        </button>
             }
             else
             {
-                <button type="button" onclick="toggleParty(this, '@party')" >
-                    @party
-                </button>
+        <button type="button" id="@string.Format(party + "Button")" onclick="toggleParty(this, '@party')">
+            @party
+        </button>
             }
         }
     </div>
