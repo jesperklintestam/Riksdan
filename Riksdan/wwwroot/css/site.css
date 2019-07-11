@@ -13,7 +13,7 @@ body {
 
 @media only screen and (max-width: 768px) {
     body {
-        margin: 15px;
+        margin: 15px 50px 15px 15px;
         padding-top: 25px;
     }
 }
@@ -67,6 +67,7 @@ h1 {
 .flexbox-row img {
     margin: 4px;
     border-radius: 5px;
+    max-width: 100%;
 }
 
 .party-div {
@@ -106,6 +107,7 @@ h1 {
     background-color: rgba(112, 112, 112, 0.10);
     line-height: 1.2;
     border-radius: 5px;
+    max-width: 29%;
 }
 
 #C {
@@ -210,6 +212,12 @@ h1 {
 @media only screen and (max-height: 365px) {
     .fixed-buttons {
         bottom: 0;
+    }
+}
+
+@media only screen and (min-width: 650px) {
+    .fixed-buttons {
+        right: 20px;
     }
 }
 
