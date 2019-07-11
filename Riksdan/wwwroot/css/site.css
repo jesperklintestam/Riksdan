@@ -1,9 +1,13 @@
-﻿body {
+﻿html {
+    scroll-behavior: smooth;
+}
+
+body {
     padding-top: 30px;
     padding-bottom: 20px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Forum', cursive;
     color: #2c3235;
-    background-color: #f5f5f5;
+    background-color: #fff;
     margin: 50px;
 }
 
@@ -27,6 +31,11 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
     cursor: default;
 }
 
+h1 {
+    text-align: center;
+    font-size: 3em;
+}
+
 .flexbox-row {
     display: flex;
     flex-wrap: wrap;
@@ -37,24 +46,27 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
     flex-direction: column;
 }
 
-h1 {
-    text-align: center;
-    font-size: 3em;
+.inactive {
+    text-decoration: line-through;
 }
 
-.person-item {
-    align-items: center;
-    text-align: center;
-    width: 105px;
-    padding: 2px;
-    margin: 4px;
-    box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.2);
-    background-color: #fff;
-    line-height: 1.2;
+.arrow-right {
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left: 8px solid rgba(171, 171, 171, 0.7);
+    transition: border-color 100ms;
 }
+
+    .arrow-right:hover {
+        border-left: 8px solid rgba(121, 121, 121, 1);
+    }
 
 .flexbox-row img {
     margin: 4px;
+    border-radius: 5px;
 }
 
 .party-div {
@@ -84,57 +96,99 @@ h1 {
     }
 }
 
+.person-item {
+    align-items: center;
+    text-align: center;
+    width: 105px;
+    padding: 2px;
+    margin: 4px;
+    box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.2);
+    background-color: rgba(112, 112, 112, 0.10);
+    line-height: 1.2;
+    border-radius: 5px;
+}
 
 #C {
-    color: #336036;
+    color: rgba(51, 96, 54, 1.00);
 }
+
+    #C .person-item {
+        background-color: rgba(51, 96, 54, 0.1);
+    }
 
 #KD {
-    color: #2d5495;
+    color: rgba(45, 84, 149, 1.00);
 }
+
+    #KD .person-item {
+        background-color: rgba(45, 84, 149, 0.1);
+    }
 
 #L {
-    color: #325ea8;
+    color: rgba(50, 94, 168, 1.00);
 }
+
+    #L .person-item {
+        background-color: rgba(50, 94, 168, 0.1);
+    }
 
 #M {
-    color: #273a8f;
+    color: rgba(39, 58, 143, 1.00);
 }
+
+    #M .person-item {
+        background-color: rgba(39, 58, 143, 0.1);
+    }
 
 #MP {
-    color: #557d38;
+    color: rgba(85, 125, 56, 1.00);
 }
+
+    #MP .person-item {
+        background-color: rgba(85, 125, 56, 0.1);
+    }
 
 #S {
-    color: #c6172c;
+    color: rgba(198, 23, 44, 1);
 }
+
+    #S .person-item {
+        background-color: rgba(198, 23, 44, 0.1);
+    }
 
 #SD {
-    color: #957501;
+    color: rgba(149, 117, 1, 1.00);
 }
 
+    #SD .person-item {
+        background-color: rgba(149, 117, 1, 0.1);
+    }
+
 #V {
-    color: #b42419;
+    color: rgba(180, 36, 25, 1.00);
 }
+
+    #V .person-item {
+        background-color: rgba(180, 36, 25, 0.1);
+    }
 
 .fixed-buttons {
     position: fixed;
     bottom: 20px;
-    right: 10px;
-    width: 52px;
+    right: 0;
+    width: 60px;
     text-align: center;
     line-height: 1;
     font-weight: bold;
 }
 
-    .fixed-buttons span {
-        margin-bottom: 5px;
-        padding: 5px 0;
-        background-color: #f5f5f5;
+    .fixed-buttons .flexbox-row {
+        align-items: center;
+        justify-content: space-between;
     }
 
     .fixed-buttons button {
-        margin: 5px;
+        margin: 4px;
         border-radius: 5px;
         border: none;
         box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
@@ -151,7 +205,6 @@ h1 {
 
     .fixed-buttons#Buttons button.inactive {
         background-color: #bebebe;
-        text-decoration: line-through;
     }
 
 @media (hover: none) {

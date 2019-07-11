@@ -10,8 +10,6 @@ namespace Riksdan.Models
     {
         public class Person
         {
-            private string partyName;
-
             [JsonProperty("fodd_ar")]
             public string BirthYear { get; set; }
             [JsonProperty("efternamn")]
@@ -22,7 +20,6 @@ namespace Riksdan.Models
             public string SortName { get; set; }
             [JsonProperty("parti")]
             public string Party { get; set; }
-
             [JsonProperty("bild_url_80")]
             public string ImageUrlSmall { get; set; }
             [JsonProperty("bild_url_192")]
@@ -40,49 +37,5 @@ namespace Riksdan.Models
             [JsonProperty("personlista")]
             public PersonList JsonObject { get; set; }
         }
-
-        //public class Party
-        //{
-        //    public string PartyFullName
-        //    {
-        //        get
-        //        {
-        //            switch (Party)
-        //            {
-        //                case "C":
-        //                    partyName = "Centerpartiet";
-        //                    break;
-        //                case "KD":
-        //                    partyName = "Kristdemokraterna";
-        //                    break;
-        //                case "L":
-        //                    partyName = "Liberalerna";
-        //                    break;
-        //                case "MP":
-        //                    partyName = "Miljöpartiet de gröna";
-        //                    break;
-        //                case "M":
-        //                    partyName = "Moderata samlingspartiet";
-        //                    break;
-        //                case "S":
-        //                    partyName = "Socialdemokraterna";
-        //                    break;
-        //                case "SD":
-        //                    partyName = "Sverigedemokraterna";
-        //                    break;
-        //                case "V":
-        //                    partyName = "Vänsterpartiet";
-        //                    break;
-        //                case "-":
-        //                    partyName = "Partilös";
-        //                    break;
-        //                default:
-        //                    partyName = "Övriga";
-        //                    break;
-        //            }
-        //            return partyName;
-        //        }
-        //    }
-        //}
     }
 }

@@ -1,11 +1,14 @@
 ﻿function toggleParty(button, party) {
     var partyDiv = document.getElementById(party);
-    if (partyDiv.style.display === "none") {
-        partyDiv.style.display = "block";
+    var partyPeople = partyDiv.getElementsByClassName("party-people")[0];
+    if (partyPeople.style.display === "none") {
+        partyPeople.style.display = "flex";
+        partyDiv.classList.remove("inactive");
         button.classList.remove("inactive");
     }
     else {
-        partyDiv.style.display = "none";
+        partyPeople.style.display = "none";
+        partyDiv.classList.add("inactive");
         button.classList.add("inactive");
     }
 }

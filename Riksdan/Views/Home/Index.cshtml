@@ -2,28 +2,26 @@
 
 @{
     var RiksdagsList = Model.JsonObject.Persons;
-    RiksdagsList.Sort((x, y) => x.Party.CompareTo(y.Party));
-    var PartyList = RiksdagsList.Select(x => x.Party).Distinct();
+    var PartyList = RiksdagsList.Select(x => x.Party).Distinct().ToList();
     string FullPartyName = "";
 }
 
 <!DOCTYPE html>
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Riksdagspolitiker</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="~/css/site.css" />
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Forum&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Sveriges Riksdag</h1>
+    <h1>SVERIGES RIKSDAG</h1>
     @foreach (string party in PartyList)
     {
         var PartyPersonList = RiksdagsList.Where(x => x.Party == party);
-    <div class="party-div" id=@party>
-        @switch (party)
+        <div id="@party" class="party-div">
+            @switch (party)
             {
                 case "C":
                     FullPartyName = "Centerpartiet";
@@ -56,41 +54,44 @@
                     FullPartyName = "Övriga";
                     break;
             }
-        <div class="flexbox-row party-header">
-            <img src="@string.Format("/images/" + party + ".png")" alt="Partilogo" />
-            <h2>@FullPartyName</h2>
-        </div>
-        <div class="flexbox-row">
-            @foreach (var person in PartyPersonList)
-                {
-            <div class="flexbox-column person-item">
-                <img src="@person.ImageUrlSmall" alt="Porträttfoto" />
-                @person.FirstName
-                @person.LastName
+            <div class="flexbox-row party-header">
+                <img src="@string.Format("/images/" + party + ".png")" alt="Partilogo" />
+                <h2>@FullPartyName</h2>
             </div>
+            <div class="flexbox-row party-people">
+                @foreach (var person in PartyPersonList)
+                {
+                    <div class="flexbox-column person-item">
+                        <img src="@person.ImageUrlSmall" alt="Porträttfoto" />
+                        @person.FirstName
+                        @person.LastName
+                    </div>
                 }
+            </div>
         </div>
-    </div>
     }
 
     <div class="fixed-buttons flexbox-column" id="Buttons">
-        <span>
-            <small>Filtrera partier</small>
-        </span>
         @foreach (string party in PartyList)
         {
-        @if (party == "-")
-            {
-        <button type="button" id="PLButton" onclick="toggleParty(this, '@party')">
-            PL
-        </button>
-            }
-            else
-            {
-        <button type="button" id="@string.Format(party + "Button")" onclick="toggleParty(this, '@party')">
-            @party
-        </button>
-            }
+            <div class="flexbox-row">
+                @if (party == "-")
+                {
+                    <a class="arrow-right" href="@string.Format("#" + party)">
+                    </a>
+                    <button type="button" id="PLButton" onclick="toggleParty(this, '@party')">
+                        PL
+                    </button>
+                }
+                else
+                {
+                    <a class="arrow-right" href="@string.Format("#" + party)">
+                    </a>
+                    <button type="button" id="@string.Format(party + "Button")" onclick="toggleParty(this, '@party')">
+                        @party
+                    </button>
+                }
+            </div>
         }
     </div>
     <script src="~/js/site.js"></script>
