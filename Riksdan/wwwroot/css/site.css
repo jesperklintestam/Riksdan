@@ -13,7 +13,7 @@ body {
 
 @media only screen and (max-width: 768px) {
     body {
-        margin: 15px 50px 15px 15px;
+        margin: 15px;
         padding-top: 25px;
     }
 }
@@ -72,6 +72,7 @@ h1 {
 
 .party-div {
     margin-top: 40px;
+    margin-right: 35px;
 }
 
     .party-div .party-header img {
