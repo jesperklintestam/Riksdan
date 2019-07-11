@@ -207,6 +207,12 @@ h1 {
         background-color: #bebebe;
     }
 
+@media only screen and (max-height: 365px) {
+    .fixed-buttons {
+        bottom: 0;
+    }
+}
+
 @media (hover: none) {
     .fixed-buttons#Buttons button.inactive {
         filter: brightness(1);
